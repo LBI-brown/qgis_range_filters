@@ -161,8 +161,9 @@ class OptionsDialog(QDialog):
 
         # Fields Table
         self.table = QTableWidget()
-        db = self.layer.dataProvider()
-        fields = db.fields()
+        #db = self.layer.dataProvider()
+        #fields = db.fields()
+        fields = self.layer.fields()
         self.table.setColumnCount(2)
         self.table.setRowCount(len(fields))
         self.table.setHorizontalHeaderLabels(["Field", "Data Type"])
