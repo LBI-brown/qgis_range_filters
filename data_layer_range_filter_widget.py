@@ -675,6 +675,7 @@ class DataLayerRangeFilterWidget(QWidget):
 
         #to trigger dialog again if slider added again
         self.layer.setCustomProperty(WIDGET_SETTING_PREFIX % SLIDER_LIST_CONFIG_NAME, None)
+        QgsMessageLog.logMessage("Slider removed", level=Qgis.Info)
 
 
 class RangeFilterWidgetProvider(QgsLayerTreeEmbeddedWidgetProvider):
