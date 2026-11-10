@@ -163,7 +163,9 @@ class OptionsDialog(QDialog):
         self.table = QTableWidget()
         #db = self.layer.dataProvider()
         #fields = db.fields()
+        #changed so calls all fields including calculated ones
         fields = self.layer.fields()
+        QgsMessageLog.logMessage(f"Fields found from layer: '{len(fields)}'", 'Range Filter Plugin', level=Qgis.Info)
         self.table.setColumnCount(2)
         self.table.setRowCount(len(fields))
         self.table.setHorizontalHeaderLabels(["Field", "Data Type"])
